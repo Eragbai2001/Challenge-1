@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: none;
+}
+
+@media (max-width: 375px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .logo1 {
+        margin-right: 10px;
+        margin-bottom: 13px
+            /* Adds some space between the icon and the text */
+    }
+
+    .content {
+        padding: 10px 30px;
+        font-weight: 500;
+    }
+
+    .cont {
+        display: flex;
+        align-items: center;
+    }
+
+    .email-form {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px;
+        position: relative;
+
+    }
+
+    .email {
+        padding: 13px;
+        border-radius: 5px;
+        border: 1px solid hsl(231, 7%, 60%);
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 13px;
+        border: 1px solid hsl(231, 7%, 60%);
+        border-radius: 5px;
+        background-color: hsl(234, 29%, 20%);
+        color: hsl(0, 0%, 100%);
+    }
+
+    .label {
+        font-size: 15px;
+        padding-bottom: 5px;
+        display: flex;
+    }
+
+    .error {
+        display: none;
+        color: red;
+    }
+
+    .error.display-error {
+        position: absolute;
+        display: flex;
+        justify-content: flex-end;
+        right: 10px;
+
+    }
+
+    
+}

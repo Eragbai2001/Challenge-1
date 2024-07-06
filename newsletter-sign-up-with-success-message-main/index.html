@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="./assets/images/illustration-sign-up-mobile.svg"
+        alt="Frontend Mentor logo"
+        class="logo" />
+      <div class="content">
+        <h1>Stay updated!</h1>
+        <br />
+
+        <p>60,000+ product managers receiving monthly updates on:</p>
+        <br />
+        <div class="cont">
+          <img
+            src="./assets/images/icon-list.svg"
+            alt="Frontend Mentor logo"
+            class="logo1" />
+          <p>Product discovery and building what matters</p>
+        </div>
+        <br />
+        <div class="cont">
+          <img
+            src="./assets/images/icon-list.svg"
+            alt="Frontend Mentor logo"
+            class="logo1" />
+          <p>Measuring to ensure updates are a success</p>
+        </div>
+        <br />
+        <div class="cont">
+          <img
+            src="./assets/images/icon-list.svg"
+            alt="Frontend Mentor logo"
+            class="logo1" />
+          <p>And much more</p>
+        </div>
+        <form name="email-form" class="email-form">
+          <label class="label"
+            >Email address
+            <p class="error email-error"></p>
+          </label>
+          <input
+            name="email"
+            type="text"
+            class="email"
+            placeholder="email@company.com" />
+          <button type="submit" class="submit">
+            Suscribe to monthly newsletter
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
