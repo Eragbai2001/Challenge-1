@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 .logo {
     display: none;
 }
@@ -13,16 +12,13 @@
         display: flex;
         flex-direction: column;
     }
-
     .logo {
         margin-bottom: 20px;
         display: block;
     }
-
     .logo1 {
         margin-right: 10px;
         margin-bottom: 13px
-            /* Adds some space between the icon and the text */
     }
 
     .content {

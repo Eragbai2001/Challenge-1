@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email Sent</title>
+    <script>
+      // Function to get query parameters by name
+      function getQueryParam(name) {
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(window.location.href);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
+      // Function to display email on page load
+      window.onload = function () {
+        var email = getQueryParam("email"); // Get the email query parameter
+        if (email) {
+          document.getElementById("emailAddress").textContent = email; // Display the email
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Success!</h1>
+    <p>An email has been sent to <span id="emailAddress"></span>.</p>
+  </body>
+</html>

@@ -35,3 +35,21 @@ function validateEmail(email) {
   var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
+
+function sendMail() {
+  var email = document.getElementById("email").value; // Correctly declare and assign the email variable
+  var params = {
+    name: document.getElementById("email").value,
+  };
+  const serviceID = "service_l8y0o0j";
+  const templateID = "template_3j3shtw";
+
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      document.getElementById("email").value = "";
+      console.log(res);
+      window.location.href = `success.html?email=${encodeURIComponent(email)}`; // Encode the email
+    })
+    .catch((err) => console.log(err));
+}
