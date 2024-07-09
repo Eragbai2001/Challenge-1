@@ -5,23 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style2.css" />
     <script>
-      // Function to get query parameters by name
-      function getQueryParam(name) {
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-          results = regex.exec(window.location.href);
-        if (!results) return null;
-        if (!results[2]) return "";
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-      }
-
-      // Function to display email on page load
-      window.onload = function () {
-        var email = getQueryParam("email"); // Get the email query parameter
-        if (email) {
-          document.getElementById("emailAddress").textContent = email; // Display the email
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to parse URL parameters
+        function getQueryParam(param) {
+          var queryString = window.location.search;
+          var urlParams = new URLSearchParams(queryString);
+          return urlParams.get(param);
         }
-      };
+
+        // Retrieve the email parameter and display it
+        var email = getQueryParam("email");
+        if (email) {
+          document.getElementById("emailAddress").textContent = email;
+        }
+      });
     </script>
   </head>
   <body>

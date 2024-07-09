@@ -37,19 +37,27 @@ function validateEmail(email) {
 }
 
 function sendMail() {
-  var email = document.getElementById("email").value; // Correctly declare and assign the email variable
+  var email = document.getElementById("email").value;
+  var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+  if (!regex.test(email)) {
+    alert("Please enter a valid email address.");
+    return; // Stop the function if the email is not valid
+  }
+
   var params = {
-    name: document.getElementById("email").value,
+    name: email,
   };
   const serviceID = "service_l8y0o0j";
   const templateID = "template_3j3shtw";
 
-  emailjs
-    .send(serviceID, templateID, params)
-    .then((res) => {
-      document.getElementById("email").value = "";
-      console.log(res);
-      window.location.href = `success.html?email=${encodeURIComponent(email)}`; // Encode the email
-    })
-    .catch((err) => console.log(err));
+  emailjs.send(serviceID, templateID, params).then(
+    (res) => {
+      console.log("Email sent successfully", res.status, res.text);
+      window.location.href = "success.html?email=" + encodeURIComponent(email); // Redirect with email as URL parameter
+    },
+    (error) => {
+      console.error("Failed to send email", error);
+    }
+  );
 }
