@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Email Sent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style2.css" />
     <script>
       // Function to get query parameters by name
       function getQueryParam(name) {
@@ -23,7 +25,28 @@
     </script>
   </head>
   <body>
-    <h1>Success!</h1>
-    <p>An email has been sent to <span id="emailAddress"></span>.</p>
+    <div class="container">
+      <img
+        src="./assets/images/icon-success.svg"
+        alt="Frontend Mentor logo"
+        class="lmg" />
+      <br />
+      <h1>Thank for subscribing</h1>
+      <br />
+      <p>
+        A confirmation mail has been sent to
+        <span id="emailAddress" class="mail"> </span> please open it and click
+        on the button inside to confirm your subscription
+      </p>
+    </div>
+    <div class="content">
+      <button
+        type="submit"
+        class="success-submit"
+        id="btn"
+        onclick="sendMail(event)">
+        <a href="index.html" class="success-button">Dismiss</a>
+      </button>
+    </div>
   </body>
 </html>
